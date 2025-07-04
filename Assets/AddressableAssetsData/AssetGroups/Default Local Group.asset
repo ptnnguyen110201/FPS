@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: ef0e97256d5b2b04a9914c52fccf4c9e
+  m_SerializeEntries:
+  - m_GUID: 00b286560eaefde47802ef4271efe745
+    m_Address: Assets/Data/GameEvn/Prefabs/Ant/Ant_Red.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1211e6f6380033f4a8bb2a3338febe95
+    m_Address: Assets/Data/GameEvn/Prefabs/Ant/Ant_Brown.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a8280487dcb79945a908e43361a3277
+    m_Address: Assets/Data/GameEvn/Prefabs/UI/UIManager.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UI
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6de2e8df039a7a24ebee44dfaa6a0264
+    m_Address: Assets/Data/GameEvn/Prefabs/Fx/HandGunMuzzle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Effect
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d7bb5594f705e04094614493baff56d
+    m_Address: Assets/Data/GameEvn/Prefabs/CameraManager.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Camera
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93fdd56c349bfd647a048479e237fda4
+    m_Address: Assets/Data/GameEvn/Prefabs/Ant/Ant_Blue.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Enemy
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5e9d23ee455a33428442abbf1f37bdb
+    m_Address: Assets/Data/GameEvn/Prefabs/Fx/RifleMuzzle.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Effect
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7cba8bac1cfd4841afb0341dc9f343f
+    m_Address: Assets/Data/GameEvn/Prefabs/Fx/BloodHit.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Effect
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c17fd9ed234be674b8926632dd867a19
+    m_Address: Assets/Data/GameEvn/Prefabs/Character/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Character
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7703d2c7260b98458df66ee00ab8035
+    m_Address: Assets/Data/GameEvn/Prefabs/Fx/Hole.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Effect
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0a884b6194ce2e648a4b01f02fc09fbd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a6861942d9eca3247b085e7c4f286bfd, type: 2}
+    - {fileID: 11400000, guid: 98f7ca6048c2ed1489969eef1e9fb949, type: 2}
