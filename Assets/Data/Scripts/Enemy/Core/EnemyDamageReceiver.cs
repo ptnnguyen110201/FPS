@@ -3,9 +3,7 @@ using Cysharp.Threading.Tasks;
 
 
 public class EnemyDamageReceiver : DamageReceiver
-{
-    [SerializeField] protected Renderer EnemyRenderer;
-    [SerializeField] protected EnemyCtrl EnemyCtrl;
+{    [SerializeField] protected EnemyCtrl EnemyCtrl;
     [SerializeField] protected float sinkDistance = 1f;
     [SerializeField] protected float duration = 1.5f;
 
@@ -18,7 +16,6 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         base.Reset();
         this.LoadComponent<EnemyCtrl>(ref this.EnemyCtrl, transform);
-        this.LoadComponentInChild<Renderer>(ref this.EnemyRenderer);
     }
 
     protected override void OnDead()
@@ -46,9 +43,6 @@ public class EnemyDamageReceiver : DamageReceiver
         Vector3 startPos = transform.position;
         Vector3 endPos = startPos + new Vector3(0, -this.sinkDistance, 0);
 
-        Material material = this.EnemyRenderer.material;
-        Color startColor = material.color;
-        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
 
         float time = 0f;
 
@@ -57,8 +51,7 @@ public class EnemyDamageReceiver : DamageReceiver
             time += Time.deltaTime;
             float t = time / duration;
 
-            material.color = Color.Lerp(startColor, endColor, t);
-
+         
             transform.position = Vector3.Lerp(startPos, endPos, t);
 
             await UniTask.Yield();

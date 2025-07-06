@@ -4,7 +4,7 @@ public class CharacterMovement
 {
     [Inject] protected IInputProvider InputProvider;
     protected CharacterSetting CharacterSetting;
-
+    protected CharacterLocomotionHandler CharacterLocomotionHandler;
     protected Vector3 velocity;
     protected float yaw;   
     protected float pitch;
@@ -15,7 +15,6 @@ public class CharacterMovement
         this.CharacterSetting = CharacterSetting;
         GameContext.Instance.InjectInto(this);
     }
-
     public void LookAt(CharacterController characterController, Transform model)
     {
         Vector2 lookInput = this.InputProvider.LookInput;

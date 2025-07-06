@@ -1,16 +1,17 @@
 using UnityEngine;
 public class WeaponRaycastHandler
-{
+{   
+    protected CharacterCtrl CharacterCtrl;
     protected WeaponDamageSender WeaponDamageSender;
     protected WeaponData WeaponData;
-    protected CharacterCtrl CharacterCtrl;
-    protected EffectManager EffectManager;
+
+    [Inject] protected IEffectManager EffectManager;
     public WeaponRaycastHandler(WeaponData WeaponData, CharacterCtrl CharacterCtrl, WeaponDamageSender WeaponDamageSender)
     {
         this.WeaponData = WeaponData;
         this.CharacterCtrl = CharacterCtrl;
         this.WeaponDamageSender = WeaponDamageSender;
-        this.EffectManager = GameContext.Instance.Resolve<EffectManager>();
+        GameContext.Instance.InjectInto(this);
     }
 
     public void ShootRay()

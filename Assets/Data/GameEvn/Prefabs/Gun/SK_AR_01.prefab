@@ -328,9 +328,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57345f5c8c7677468c34a0acf02ea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponAnimator: {fileID: 0}
-  CharacterAnimator: {fileID: 22100000, guid: f950f5cbd15ac4e469f996944c1bf2a1, type: 2}
-  WeaponMuzzleHandler: {fileID: 0}
+  characterCtrl: {fileID: 0}
+  weaponAnimator: {fileID: 0}
+  characterAnimator: {fileID: 22100000, guid: f950f5cbd15ac4e469f996944c1bf2a1, type: 2}
+  weaponMuzzleHandler: {fileID: 0}
+  <WeaponData>k__BackingField:
+    WeaponType: 1
+    Damage: 5
+    FireRate: 450
+    BulletCount: 30
+    MuzzleName: RifleMuzzle
+    Reload: Reload
+    ReloadEmpty: Reload Empty
+    Fire: Fire
 --- !u!1 &7438884371457122571
 GameObject:
   m_ObjectHideFlags: 0

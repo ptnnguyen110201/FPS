@@ -21,7 +21,7 @@ public class CharacterAnimationSetting
 
 
     [Header("Animation State Name")]
-
+    public string Fire = "Fire";
     public string Holster = "Holster";
     public string UnHolster = "UnHolster";
 }

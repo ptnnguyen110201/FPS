@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: -3614368122061961137}
   - component: {fileID: 7688829135606479692}
   - component: {fileID: 180983705961577896}
-  m_Layer: 7
+  m_Layer: 16
   m_Name: Ant_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,12 +250,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a950c7e45f6eb940b5ba582b6580a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <maxHp>k__BackingField: 10
-  <currentHp>k__BackingField: 10
+  <maxHp>k__BackingField: 100000
+  <currentHp>k__BackingField: 100000
   Collider: {fileID: 6398245302402683792}
-  EnemyRenderer: {fileID: 7882049962744293923}
   EnemyCtrl: {fileID: 180983705961577896}
-  DespawnTime: 3
   sinkDistance: 1
   duration: 1.5
 --- !u!114 &180983705961577896
@@ -274,8 +272,6 @@ MonoBehaviour:
   EnemySetting:
     moveSpeed: 3
     LayerAction: Action Layer
-    TakeDamageL: TakeDamageL
-    TakeDamageR: TakeDamageR
   EnemyDamageReceiver: {fileID: 7688829135606479692}
 --- !u!1 &1086531069829984439
 GameObject:

@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: -3614368122061961137}
   - component: {fileID: 364391892129486486}
   - component: {fileID: 5732266614108620953}
-  m_Layer: 7
+  m_Layer: 16
   m_Name: Ant_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,6 @@ MonoBehaviour:
   Collider: {fileID: 6398245302402683792}
   EnemyRenderer: {fileID: 7882049962744293923}
   EnemyCtrl: {fileID: 5732266614108620953}
-  DespawnTime: 3
   sinkDistance: 1
   duration: 1.5
 --- !u!114 &5732266614108620953
@@ -274,8 +273,6 @@ MonoBehaviour:
   EnemySetting:
     moveSpeed: 3
     LayerAction: Action Layer
-    TakeDamageL: TakeDamageL
-    TakeDamageR: TakeDamageR
   EnemyDamageReceiver: {fileID: 364391892129486486}
 --- !u!1 &1086531069829984439
 GameObject:

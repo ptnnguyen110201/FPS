@@ -13,16 +13,13 @@ public class CharacterReloadHandler
         this.CharacterSetting = CharacterSetting;
     }
 
-
     public async UniTask PlayReload(string ReloadType, CancellationToken token)
     {
-        bool isReloading = this.CharacterAnimatorCore.isReloading;
-        if (isReloading) return;
-
-        this.CharacterAnimatorCore.SetReloading(true);
-
         Animator animator = this.CharacterAnimatorCore.CharacterAnimator;
         int layer = animator.GetLayerIndex(this.CharacterSetting.LayerAction);
+
+        if (animator == null || !animator.isActiveAndEnabled)
+            return;
 
         animator.Play(ReloadType, layer, 0f);
 
@@ -30,14 +27,18 @@ public class CharacterReloadHandler
         {
             await UniTask.WaitUntil(() =>
             {
-                if (animator == null) return true;
+                if (animator == null || !animator.isActiveAndEnabled)
+                    return true;
+
                 var state = animator.GetCurrentAnimatorStateInfo(layer);
                 return state.IsName(ReloadType) && state.normalizedTime >= 0.95f;
             }, cancellationToken: token);
         }
         catch (OperationCanceledException)
         {
-            this.CharacterAnimatorCore.SetReloading(false);
+
+           
+            
         }
     }
 

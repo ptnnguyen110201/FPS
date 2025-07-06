@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: -3614368122061961137}
   - component: {fileID: 2731151646930800050}
   - component: {fileID: -2169027224730597759}
-  m_Layer: 7
+  m_Layer: 16
   m_Name: Ant_Brown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,6 @@ MonoBehaviour:
   Collider: {fileID: 6398245302402683792}
   EnemyRenderer: {fileID: 7882049962744293923}
   EnemyCtrl: {fileID: -2169027224730597759}
-  DespawnTime: 3
   sinkDistance: 1
   duration: 1.5
 --- !u!114 &-2169027224730597759
@@ -274,8 +273,6 @@ MonoBehaviour:
   EnemySetting:
     moveSpeed: 3
     LayerAction: Action Layer
-    TakeDamageL: TakeDamageL
-    TakeDamageR: TakeDamageR
   EnemyDamageReceiver: {fileID: 2731151646930800050}
 --- !u!1 &1086531069829984439
 GameObject:

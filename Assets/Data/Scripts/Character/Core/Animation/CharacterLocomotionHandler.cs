@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CharacterLocomotionHandler
 {
+    [Inject] protected IInputProvider inputProvider;
     protected CharacterAnimatorCore CharacterAnimatorCore;
     protected CharacterAnimationSetting CharacterSetting;
     protected float aimingValue = 0f;
@@ -13,43 +14,36 @@ public class CharacterLocomotionHandler
     {
         this.CharacterAnimatorCore = CharacterAnimatorCore;
         this.CharacterSetting = CharacterSetting;
+        GameContext.Instance.InjectInto(this);
     }
 
-    public void Update(IInputProvider input)
+    public void UpdateMovement()
     {
-        this.UpdateAiming(input);
-        this.UpdateMovement(input);
-    }
-
-    protected void UpdateMovement(IInputProvider InputProvider)
-    {
-        if (InputProvider.isAttacking) this.targetWeight = 0.5f;
+        if (inputProvider.isAttacking) this.targetWeight = 0.5f;
         else this.targetWeight = 1f;
        
         this.locomotionWeight = Mathf.Lerp(this.locomotionWeight, this.targetWeight, Time.deltaTime * 20f);
         this.CharacterAnimatorCore.SetLayerWeight(this.CharacterSetting.LayerLocomotion, this.locomotionWeight);
 
 
-        if (InputProvider.MoveInput != Vector2.zero) this.movementValue += Time.deltaTime * 5f;
+        if (inputProvider.MoveInput != Vector2.zero) this.movementValue += Time.deltaTime * 5f;
         else this.movementValue -= Time.deltaTime * 5f;
         
         this.movementValue = Mathf.Clamp01(this.movementValue);
 
-        bool isRunning = InputProvider.IsSprinting;
+        bool isRunning = inputProvider.IsSprinting;
 
-        if (InputProvider.isAttacking)  isRunning = false;
-        if (InputProvider.IsAiming) isRunning = false;
+        if (inputProvider.isAttacking)  isRunning = false;
+        if (inputProvider.IsAiming) isRunning = false;
         
         this.CharacterAnimatorCore.CharacterAnimator.SetFloat(this.CharacterSetting.MovementPara, this.movementValue);
         this.CharacterAnimatorCore.CharacterAnimator.SetBool(this.CharacterSetting.RunningPara, isRunning);
     }
 
-    protected void UpdateAiming(IInputProvider InputProvider)
+    public void UpdateAiming()
     {
-        bool CanAim = InputProvider.IsAiming;
-        bool isReloading = this.CharacterAnimatorCore.isReloading;
-        if (isReloading) CanAim = false;
-
+        bool CanAim = inputProvider.IsAiming;
+        if (this.CharacterAnimatorCore.isReloading) CanAim = false;
         if (CanAim) this.aimingValue += Time.deltaTime * 3f;
         else  this.aimingValue -= Time.deltaTime * 3f;
 

@@ -69,14 +69,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57345f5c8c7677468c34a0acf02ea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponAnimator: {fileID: 0}
-  CharacterAnimator: {fileID: 22100000, guid: 257eac322a7afde43bfa9aa9e60baa84, type: 2}
-  WeaponMuzzleHandler: {fileID: 0}
-  WeaponData:
+  characterCtrl: {fileID: 0}
+  weaponAnimator: {fileID: 0}
+  characterAnimator: {fileID: 22100000, guid: 257eac322a7afde43bfa9aa9e60baa84, type: 2}
+  weaponMuzzleHandler: {fileID: 0}
+  <WeaponData>k__BackingField:
+    WeaponType: 2
     Damage: 2
     FireRate: 300
-    BulletCount: 12
-    MuzzleName: ShootMuzzle
+    BulletCount: 15
+    MuzzleName: HandGunMuzzle
     Reload: Reload
     ReloadEmpty: Reload Empty
     Fire: Fire

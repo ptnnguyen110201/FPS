@@ -5,14 +5,15 @@ public class CharacterAnimatorCore
     public Animator CharacterAnimator {  get; protected set; }
     public CharacterAnimationSetting CharacterAnimationSetting { get; protected set; }
     public bool isReloading { get; protected set; } = false;
-    public void SetReloading(bool isReloading) => this.isReloading = isReloading;
+    public void SetIsReloading(bool isReloading) => this.isReloading = isReloading; 
 
     public CharacterAnimatorCore(Animator CharacterAnimator, CharacterAnimationSetting CharacterAnimationSetting) 
     { 
         this.CharacterAnimator = CharacterAnimator;
         this.CharacterAnimationSetting = CharacterAnimationSetting;
+        GameContext.Instance.InjectInto(this);
     }
-
+    
     public void SetController(RuntimeAnimatorController controller)
         => this.CharacterAnimator.runtimeAnimatorController = controller;
 

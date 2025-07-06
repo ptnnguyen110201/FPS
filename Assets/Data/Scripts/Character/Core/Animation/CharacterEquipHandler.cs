@@ -20,6 +20,8 @@ public class CharacterEquipHandler
 
         await UniTask.WaitUntil(() =>
         {
+            if (Animator == null || !Animator.isActiveAndEnabled)
+                return true;
             var state = Animator.GetCurrentAnimatorStateInfo(layer);
             return state.IsName(this.CharacterSetting.Holster) && state.normalizedTime >= 1f;
         });
@@ -35,7 +37,10 @@ public class CharacterEquipHandler
 
         await UniTask.WaitUntil(() =>
         {
+            if (Animator == null || !Animator.isActiveAndEnabled)
+                return true;
             var state = Animator.GetCurrentAnimatorStateInfo(layer);
+            
             return state.IsName(this.CharacterSetting.UnHolster) && state.normalizedTime >= 0.5f;
         });
 

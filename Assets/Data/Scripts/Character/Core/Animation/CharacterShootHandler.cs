@@ -1,20 +1,19 @@
 using UnityEngine;
 public class CharacterShootHandler
 {
-    protected CharacterAnimationSetting CharacterAnimationSetting;
-    protected CharacterAnimatorCore CharacterAnimatorCore;
+    protected CharacterAnimationSetting characterAnimationSetting;
+    protected CharacterAnimatorCore characterAnimatorCore;
 
-    public CharacterShootHandler(CharacterAnimatorCore CharacterAnimatorCore, CharacterAnimationSetting CharacterSetting)
+    public CharacterShootHandler(CharacterAnimatorCore characterAnimatorCore, CharacterAnimationSetting characterAnimationSetting)
     {
-        this.CharacterAnimatorCore = CharacterAnimatorCore;
-        this.CharacterAnimationSetting = CharacterSetting;
+        this.characterAnimatorCore = characterAnimatorCore;
+        this.characterAnimationSetting = characterAnimationSetting;
     }
 
-    public void PlayShoot(string StateName)
+    public void PlayShoot()
     {
-        if (this.CharacterAnimatorCore.isReloading) return;
-        Animator Animator = this.CharacterAnimatorCore.CharacterAnimator;
-        int layer = Animator.GetLayerIndex(this.CharacterAnimationSetting.LayerOverLay);
-        Animator.Play(StateName, layer, 0f);
+        Animator Animator = this.characterAnimatorCore.CharacterAnimator;
+        int layer = Animator.GetLayerIndex(this.characterAnimationSetting.LayerOverLay);
+        Animator.Play(this.characterAnimationSetting.Fire, layer, 0f);
     }
 }
