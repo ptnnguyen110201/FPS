@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a950c7e45f6eb940b5ba582b6580a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <maxHp>k__BackingField: 100000
-  <currentHp>k__BackingField: 100000
+  <maxHp>k__BackingField: 10
+  <currentHp>k__BackingField: 10
   Collider: {fileID: 6398245302402683792}
   EnemyCtrl: {fileID: 180983705961577896}
   sinkDistance: 1

@@ -253,7 +253,6 @@ MonoBehaviour:
   <maxHp>k__BackingField: 10
   <currentHp>k__BackingField: 10
   Collider: {fileID: 6398245302402683792}
-  EnemyRenderer: {fileID: 7882049962744293923}
   EnemyCtrl: {fileID: 5732266614108620953}
   sinkDistance: 1
   duration: 1.5

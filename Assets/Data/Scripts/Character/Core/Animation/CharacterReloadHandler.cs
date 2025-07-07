@@ -15,6 +15,7 @@ public class CharacterReloadHandler
 
     public async UniTask PlayReload(string ReloadType, CancellationToken token)
     {
+        if (this.CharacterAnimatorCore.isReloading) return;
         Animator animator = this.CharacterAnimatorCore.CharacterAnimator;
         int layer = animator.GetLayerIndex(this.CharacterSetting.LayerAction);
 

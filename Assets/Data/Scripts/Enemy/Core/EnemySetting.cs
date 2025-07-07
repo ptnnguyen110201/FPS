@@ -14,4 +14,6 @@ public class EnemySetting
     public string LayerAction = "Action Layer";
 
 
+    [Header("Animation Name")]
+    public string HitEffect = "BloodHit";
 }
